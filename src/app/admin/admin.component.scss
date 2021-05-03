@@ -1,3 +1,13 @@
+.admin-component {
+    background-color: rgba(200, 250, 250, 0.219);
+}
+
+.header {
+    margin-left: 50px;
+    margin-top: 50px;
+
+}
+
 .card {
     max-width: 600px;
 }
@@ -7,15 +17,12 @@
 .model-accordion {
     width: 450px;
     margin: 50px;
-
 }
 .model-card {
-    margin: 10px;
+    margin: 20px;
     width: 400px;
 }
-.model-action-button {
-    margin: 10px;
-}
+
 .model-title {
     margin: 15px;
 }
