@@ -44,14 +44,18 @@ import { AdminComponent } from './admin/admin.component';
 import { SkillsAdminComponent } from './skills/skills-admin/skills-admin.component';
 import { DeleteConfirmationDialogComponent } from './delete-confirmation-dialog/delete-confirmation-dialog.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SkillService } from './skills/skills.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { EducationAdminComponent } from './education/education-admin/education-admin.component';
-import { EducationService } from './education/education.service';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { BioAdminComponent } from './bio/bio-admin/bio-admin.component';
 import { AdminAchievementComponent } from './achievements/admin-achievement/admin-achievement.component';
 import { ExperienceAdminComponent } from './experience/experience-admin/experience-admin.component';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+
+import { environment } from 'src/environments/environment';
+import { CourseAdminComponent } from './course/course-admin/course-admin.component';
+import { ProjectAdminComponent } from './project/project-admin/project-admin.component';
 
 
 
@@ -71,9 +75,13 @@ import { ExperienceAdminComponent } from './experience/experience-admin/experien
     BioAdminComponent,
     AdminAchievementComponent,
     ExperienceAdminComponent,
+    CourseAdminComponent,
+    ProjectAdminComponent,
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig, "cloud"),
+    AngularFireStorageModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,

@@ -4,6 +4,7 @@ export interface BioNetwork {
     linkedin: string,
     github: string,
     aboutme: string, 
+    resume: string, 
     hackerrank: string
     email: string
 } 
@@ -13,7 +14,8 @@ export interface Bio {
     name: string,
     linkedin: string,
     github: string,
-    aboutme: string, 
+    aboutme: string,
+    resume: string, 
     hackerrank: string
     email: string
 } 
@@ -26,6 +28,7 @@ export function BioToLocal(bio: BioNetwork): Bio {
         linkedin: bio.linkedin,
         github: bio.github,
         aboutme: bio.aboutme, 
+        resume: bio.resume, 
         hackerrank: bio.hackerrank,
         email: bio.email
     }
@@ -38,6 +41,7 @@ export function BioToNetwork(bio: Bio): BioNetwork {
         linkedin: bio.linkedin,
         github: bio.github,
         aboutme: bio.aboutme, 
+        resume: bio.resume, 
         hackerrank: bio.hackerrank,
         email: bio.email
     }

@@ -49,6 +49,7 @@ export class BioService {
         name: "",
         linkedin: "",
         github: "",
+        resume: "",
         aboutme: "", 
         hackerrank: "",
         email: ""
