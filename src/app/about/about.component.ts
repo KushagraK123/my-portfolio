@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { About} from '../models/about.model'
+import { Subscription } from 'rxjs';
+import { Bio } from '../bio/bio.model';
+import { BioService } from '../bio/bio.service';
 
 @Component({
   selector: 'app-about',
@@ -8,11 +10,25 @@ import { About} from '../models/about.model'
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  private bioSubscription: Subscription = new Subscription();
+  constructor(private bioService: BioService) { }
+  bio: Bio= {
+    _id: "", 
+    name: "",
+    linkedin: "",
+    github: "",
+    resume: "",
+    aboutme: "", 
+    hackerrank: "",
+    email: ""
+  };
 
   ngOnInit(): void {
+    this.bioService.getBio();
+    this.bioSubscription = this.bioService.getBioUpdateListener().subscribe(
+      (bio: Bio)=>{
+        this.bio = bio;
+      }
+    );
   }
-
-  about:About = {about: "Heloooxxxxoo"};
-
 }

@@ -1,0 +1,18 @@
+<div id="achievements">
+    <h2 class="heading">Achievements</h2>
+
+    <ng-container *ngIf="isLoading">
+      <app-loader></app-loader>
+    </ng-container>
+    
+  <ng-container *ngFor="let achievement of achievements">
+    <div class="education-block" *ngIf="getBooleanFromString(achievement.isActive)">
+      
+      <h3>{{achievement.title}}</h3>
+      <span class="education-date">{{achievement.time}}</span>
+      
+      <h4 style="font-size: 14px; margin-top: 32px;">{{achievement.description}}</h4>
+  
+    </div>
+  </ng-container>
+  </div>

@@ -1,0 +1,30 @@
+<div id="experience" class="background-alt">
+    <h2 class="heading">Experience</h2>
+    <div id="experience-timeline">
+      <ng-container *ngIf="isLoading">
+        <app-loader></app-loader>
+      </ng-container>
+  
+      <ng-container *ngFor="let experience of experiences">
+        <ng-container *ngIf="getBooleanFromString(experience.isActive)">
+      <div class="vtimeline-point"><div class="vtimeline-icon"><i class="fa fa-map-marker"></i></div>
+      <div class="vtimeline-block"><span class="vtimeline-date">{{experience.time}}</span>
+        <div data-date="July 2018 – Present" class="vtimeline-content">
+          <h3><a href="{{experience.companyWebsite}}" target="_blank">{{experience.company}}</a></h3>
+          <h4>{{experience.title}}</h4>
+          <ul>
+            <ng-container *ngFor="let des of getDesArray(experience.description)">
+              <p>
+                <li>{{des}}</li>
+              </p>
+            </ng-container>
+          </ul>
+      </div>
+    </div>
+  </div>
+  </ng-container>
+      </ng-container>
+    </div>
+  </div>
+  
+  

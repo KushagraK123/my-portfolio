@@ -22,6 +22,10 @@ export class ProjectService {
              map((projectData)=> {
                  return projectData.map( (it)=> 
                     ProjectToLocal(it)
+                 ).sort (
+                    function (a, b) {
+                        return a.sequence - b.sequence;
+                    }
                  );
              })
          )
@@ -61,6 +65,13 @@ export class ProjectService {
 
     projects: Project[] = [
     ];
+
+    getProjectWithId(projectId: string) {
+        let project = this.projects.find( it=> 
+            it._id == projectId
+        );
+        return project;
+    }
 
      
 

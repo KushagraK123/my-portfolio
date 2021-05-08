@@ -22,6 +22,10 @@ export class EducationService {
              map((educationData)=> {
                  return educationData.map( (it)=> 
                     EducationToLocal(it)
+                 ).sort(
+                    function (a, b) {
+                        return a.sequence - b.sequence;
+                    }
                  );
              })
          )

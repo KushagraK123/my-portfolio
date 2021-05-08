@@ -1,0 +1,39 @@
+<div id="projects" class="background-alt">
+    <h2 class="heading">Projects</h2>
+    <div class="container">
+        <div class="row">
+
+          <ng-container *ngIf="isLoading">
+            <app-loader></app-loader>
+          </ng-container>
+  
+          <ng-container *ngFor="let project of projects">
+            <div class="project shadow-large" *ngIf="getBooleanFromString(project.isActive)">
+                <div routerLink="project-detail" routerLinkActive="active" class="project-image">
+                    <img style="width: 200px; height: 200px;" src="{{project.mainImage}}" />
+                </div>
+                <!-- End .project-image -->
+                <div class="project-info">
+                    <h3 class="header-text">{{project.title}}</h3>
+                    <p style="text-align: left;">
+                        {{project.description}}
+                    </p>
+  
+                  <p style="text-align: left;" *ngIf="!getBooleanFromString(project.hasLink)">  <a [routerLink]="['project-detail', project._id]" routerLinkActive="active">Full Project Details</a> </p>
+                  <p style="text-align: left;" *ngIf="getBooleanFromString(project.hasLink)">  <a href="{{project.projectLink}}" target="blank">View</a> </p>
+  
+                </div>
+                <!-- End .project-info -->
+            </div>
+            <!-- End .project -->
+          </ng-container>
+        </div>
+    </div>
+    <div class="card-container">
+  
+      <div class="card card-small" *ngIf="hideButtonActive" style="padding: 24px; padding-right: 16px; background-color: white;" (click)="toggleViewMore()">
+        <span>{{ showAll ? 'Show Less' : 'Show More' }}  &nbsp; <i class="{{showAll ? 'fa fa-chevron-up' : 'fa fa-chevron-down'}}" aria-hidden="true" id="lead-chevron" ></i></span>
+      </div>
+      </div>
+  </div>
+  <!-- End #projects -->

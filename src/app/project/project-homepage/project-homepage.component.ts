@@ -1,0 +1,52 @@
+import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { Project } from '../project.model';
+import { ProjectService } from '../project.service';
+
+
+@Component({
+  selector: 'app-project-homepage',
+  templateUrl: './project-homepage.component.html',
+  styleUrls: ['./project-homepage.component.scss']
+})
+export class ProjectHomepageComponent implements OnInit {
+
+  private projectSubscription: Subscription = new Subscription();
+  allProjects: Project[] = [];
+  projects: Project[] = [];
+  showAll: boolean = false
+  max: number = 2
+  isLoading=true;
+  hideButtonActive = false;
+
+
+
+  constructor( private projectService: ProjectService ) { }
+
+  ngOnInit(): void {
+    this.projectService.getProjects();
+    this.projectSubscription = this.projectService.getProjectUpdateListener().subscribe(
+      (projects: Project[])=>{
+        this.allProjects = projects;
+        this.projects = this.allProjects.slice(0,Math.min(this.max,this.allProjects.length));
+        this.hideButtonActive = this.allProjects.length > 2;
+        this.isLoading = false;
+
+      }
+    );
+  } 
+
+  toggleViewMore() {
+    this.showAll = !this.showAll
+    if(this.showAll) {
+      this.projects = this.allProjects;
+    }else {
+      this.projects = this.allProjects.slice(0,Math.min(this.max,this.allProjects.length));
+    }
+  }
+
+  getBooleanFromString(value: string): Boolean {
+    return value == "true";
+  }
+
+}

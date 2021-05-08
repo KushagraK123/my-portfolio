@@ -26,7 +26,11 @@ export class SkillService {
                  console.log(skillsData);
                 return skillsData.map((it)=>
                     skillToLocal(it)
-                );
+                ).sort (
+                    function (a, b) {
+                        return a.sequence - b.sequence;
+                    }
+                 );
              })
          )
          .subscribe((skillData)=> {

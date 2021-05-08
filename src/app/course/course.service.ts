@@ -22,6 +22,10 @@ export class CourseService {
              map((courseData)=> {
                  return courseData.map( (it)=> 
                     CourseToLocal(it)
+                 ).sort (
+                    function (a, b) {
+                        return a.sequence - b.sequence;
+                    }
                  );
              })
          )

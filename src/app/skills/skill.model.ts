@@ -13,7 +13,7 @@ export interface Skill {
     _id: string, 
     name: string, 
     sequence: number,
-    isActive: String
+    isActive: string
 }
 
 
@@ -39,7 +39,7 @@ export function skillToNetwork(skill: Skill): SkillNetwork {
     }
 }
 
-function getSkillStringValue(isActive: boolean): String {
+function getSkillStringValue(isActive: boolean): string {
     if(isActive) return "true";
     else return "false";
 }

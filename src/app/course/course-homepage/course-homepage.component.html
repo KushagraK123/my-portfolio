@@ -1,0 +1,39 @@
+<div id="courses" class="background-alt">
+    <h2 >Courses and Certificates</h2>
+    <div class="container">
+
+      <ng-container *ngIf="isLoading">
+        <app-loader></app-loader>
+      </ng-container>
+        <div class="row">
+  
+          <ng-container *ngFor="let course of courses">
+            <div class="project shadow-large" *ngIf="getBooleanFromString(course.isActive)">
+                <div class="project-image"> 
+                    <img style="width: 200px; height: 200px;" src="{{course.image}}" />
+                </div>
+                <!-- End .project-image -->
+                <div class="project-info">
+                    <h3 style="text-align: left;">{{course.title}}</h3>
+                    <p style="text-align: left;">
+                        {{course.description}}
+                    </p>
+  
+                  <p style="text-align: left;" >  <a target="blank" href="">Certificate</a> </p>
+  
+  
+                </div>
+                <!-- End .project-info -->
+            </div>
+            <!-- End .project -->
+          </ng-container>
+        </div>
+    </div>
+    <div class="card-container">
+  
+    <div class="card card-small" *ngIf="hideButtonActive" style="padding: 24px; padding-right: 16px; background-color: white;"  (click)="toggleViewMore()">
+      <span>{{ showAll ? 'Show Less' : 'Show More' }}  &nbsp; <i class="{{showAll ? 'fa fa-chevron-up' : 'fa fa-chevron-down'}}" aria-hidden="true" id="lead-chevron" ></i></span>
+    </div>
+    </div>
+  </div>
+  <!-- End #projects -->

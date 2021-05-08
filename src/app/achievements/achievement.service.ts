@@ -21,6 +21,10 @@ export class AchievementService {
              map((achievementData)=> {
                  return achievementData.map( (it)=> 
                     AchievementToLocal(it)
+                 ).sort (
+                    function (a, b) {
+                        return a.sequence - b.sequence;
+                    }
                  );
              })
          )

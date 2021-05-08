@@ -44,6 +44,8 @@ export class ProjectAdminComponent implements OnInit, OnDestroy {
     let haskLink = form.controls['hasLink'].value;
     let seq = Number.parseInt(form.controls['sequence'].value);
     let isActive = form.controls['isActive'].value;
+    let skills = form.controls['skills'].value;
+
 
     let mainImage = form.controls['newMainImage'].value == "" ? form.controls['mainImage'].value : form.controls['newMainImage'].value;
     let ss1 = form.controls['newss1'].value == "" ? form.controls['ss1'].value : form.controls['newss1'].value;
@@ -54,7 +56,7 @@ export class ProjectAdminComponent implements OnInit, OnDestroy {
 
 
 
-    let p: Project = {_id: project._id, title: title, description: description, projectLink: projectLink, 
+    let p: Project = {_id: project._id, title: title, skills: skills, description: description, projectLink: projectLink, 
     hasLink: haskLink, sequence: seq, isActive: isActive, mainImage: mainImage, ss1: ss1, ss2: ss2, ss3: ss3,
     ss4: ss4, ss5: ss5};
     this.projectService.updateProject(p);
@@ -70,6 +72,7 @@ export class ProjectAdminComponent implements OnInit, OnDestroy {
     let haskLink = form.controls['hasLink'].value;
     let seq = Number.parseInt(form.controls['sequence'].value);
     let isActive = form.controls['isActive'].value;
+    let skills = form.controls['skills'].value;
 
     let mainImage = form.controls['newMainImage'].value;
     let ss1 = form.controls['newss1'].value;
@@ -79,7 +82,7 @@ export class ProjectAdminComponent implements OnInit, OnDestroy {
     let ss5 = form.controls['newss5'].value;
 
 
-    let p: Project = {_id: "", title: title, description: description, projectLink: projectLink, 
+    let p: Project = {_id: "", title: title, skills: skills, description: description, projectLink: projectLink, 
     hasLink: haskLink, sequence: seq, isActive: isActive, mainImage: mainImage, ss1: ss1, ss2: ss2, ss3: ss3,
     ss4: ss4, ss5: ss5};
     

@@ -9,6 +9,11 @@
           </mat-form-field>
 
           <mat-form-field class="input-feild" appearance="fill">
+            <mat-label>Skills</mat-label>
+            <input matInput name="skills" [(ngModel)]="project.skills"  ngModel required #skills="ngModel">
+          </mat-form-field>
+
+          <mat-form-field class="input-feild" appearance="fill">
             <mat-label>Description</mat-label>
             <input matInput name="description" [(ngModel)]="project.description" ngModel required #description="ngModel">
           </mat-form-field>
@@ -131,6 +136,11 @@
             <mat-form-field class="input-feild" appearance="fill">
                 <mat-label>Title</mat-label>
                 <input matInput name="title" ngModel required #title="ngModel">
+              </mat-form-field>
+
+              <mat-form-field class="input-feild" appearance="fill">
+                <mat-label>Skills</mat-label>
+                <input matInput name="skills" ngModel required #skills="ngModel">
               </mat-form-field>
     
               <mat-form-field class="input-feild" appearance="fill">

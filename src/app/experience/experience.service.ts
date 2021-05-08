@@ -25,7 +25,11 @@ export class ExperienceService {
              map((experienceData)=> {
                  return experienceData.map( (it)=> 
                     ExperienceToLocal(it)
-                 );
+                 ).sort (
+                    function (a, b) {
+                        return a.sequence - b.sequence;
+                    }
+                 )
              })
          )
          .subscribe((experienceData)=> {

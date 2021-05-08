@@ -48,6 +48,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { EducationAdminComponent } from './education/education-admin/education-admin.component';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { BioAdminComponent } from './bio/bio-admin/bio-admin.component';
+import { ContactUsComponent } from './bio/contact-us/contact-us.component';
+
 import { AdminAchievementComponent } from './achievements/admin-achievement/admin-achievement.component';
 import { ExperienceAdminComponent } from './experience/experience-admin/experience-admin.component';
 import { AngularFireModule } from '@angular/fire';
@@ -56,7 +58,15 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from 'src/environments/environment';
 import { CourseAdminComponent } from './course/course-admin/course-admin.component';
 import { ProjectAdminComponent } from './project/project-admin/project-admin.component';
-
+import { ExperienceHomepageComponent } from './experience/experience-homepage/experience-homepage.component';
+import { EducationHomepageComponent } from './education-homepage/education-homepage.component';
+import { ProjectHomepageComponent } from './project/project-homepage/project-homepage.component';
+import { AchievementHomepageComponent } from './achievements/achievement-homepage/achievement-homepage.component';
+import { CourseHomepageComponent } from './course/course-homepage/course-homepage.component';
+import { SkillHomepageComponent } from './skills/skill-homepage/skill-homepage.component';
+import { ProjectDetailComponent } from './project/project-detail/project-detail.component';
+import { FooterComponent } from './footer/footer.component';
+import { LoaderComponent } from './loader/loader.component';
 
 
 
@@ -77,6 +87,16 @@ import { ProjectAdminComponent } from './project/project-admin/project-admin.com
     ExperienceAdminComponent,
     CourseAdminComponent,
     ProjectAdminComponent,
+    ExperienceHomepageComponent,
+    EducationHomepageComponent,
+    ProjectHomepageComponent,
+    AchievementHomepageComponent,
+    CourseHomepageComponent,
+    SkillHomepageComponent,
+    ContactUsComponent,
+    ProjectDetailComponent,
+    FooterComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,

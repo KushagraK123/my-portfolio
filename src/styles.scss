@@ -1,26 +1,6 @@
 
-/*
-    File Contents:
 
-        1. Variables
-        2. Mixins
-        3. Global Styles
-        4. Lead Styles
-        5. About Styles
-        6. Experience Styles
-        7. Education Styles
-        8. Project Styles
-        9. Skills Styles
-        10. Contact Styles
-        11. Optional Section Styles
-        12. Media Queries
-*/
 
-/*
-    ------------------------
-    ----- 1. Variables -----
-    ------------------------
-*/
 
 // Define base and accent colors
 $base-color: #3498db;
@@ -146,7 +126,33 @@ body {
     }
 }
 
-// No JS styles
+//text styles for homepage
+
+.header-text{
+    font-size: 1.5em;
+    font-weight: 300;
+    color: $heading;
+    margin: 0 0 15px 0;
+    cursor: pointer;
+    text-align: left;
+}
+.sub-header-text{
+    font-size: 1.3em;
+    font-weight: 250;
+    color: $heading;
+    margin: 0 0 15px 0;
+    cursor: pointer;
+    text-align: left;
+}
+.body-text{
+    font-size: 1.175em;
+    font-weight: 200;
+    color: $heading;
+    margin: 0 0 15px 0;
+    cursor: pointer;
+    text-align: left;
+}
+
 .no-js {
     #experience-timeline {
         > div {
@@ -415,18 +421,22 @@ footer {
 */
 
 #about {
+    text-align: center;
     padding: 75px 15px;
     border-bottom: 1px solid $border;
 
     h2 {
+        list-style-type: none;
+        padding: 0px 0px 0px 0px;
+        border-bottom: 1px solid #3498db;
+        text-align: center;
+        color: #374054;
+        position: relative;
+        font-size: 2em;
+        font-weight: 300;
+        display: inline-block;
         color: $heading;
-    }
-
-    p {
-        color: $text;
-        margin: 0;
-        margin-bottom: 15px;
-        font-size: 20px;
+        margin: 0 0 15px 0;
     }
 }
 
@@ -442,7 +452,17 @@ footer {
     border-bottom: 1px solid $border;
 
     h2 {
+        list-style-type: none;
+        padding: 0px 0px 0px 0px;
+        border-bottom: 1px solid #3498db;
+        text-align: center;
+        color: #374054;
+        position: relative;
+        font-size: 2em;
+        font-weight: 300;
+        display: inline-block;
         color: $heading;
+        margin: 0 0 15px 0;
     }
 }
 
@@ -553,8 +573,17 @@ footer {
     text-align: center;
 
     h2 {
+        list-style-type: none;
+        padding: 0px 0px 0px 0px;
+        border-bottom: 1px solid #3498db;
+        text-align: center;
+        color: #374054;
+        position: relative;
+        font-size: 2em;
+        font-weight: 300;
+        display: inline-block;
         color: $heading;
-        margin-bottom: 50px;
+        margin: 0 0 15px 0;
     }
 }
 
@@ -607,8 +636,17 @@ footer {
     text-align: center;
 
     h2 {
+        list-style-type: none;
+        padding: 0px 0px 0px 0px;
+        border-bottom: 1px solid #3498db;
+        text-align: center;
+        color: #374054;
+        position: relative;
+        font-size: 2em;
+        font-weight: 300;
+        display: inline-block;
         color: $heading;
-        margin-bottom: 50px;
+        margin: 0 0 15px 0;
     }
 }
 
@@ -672,8 +710,17 @@ footer {
     text-align: center;
 
     h2 {
+        list-style-type: none;
+        padding: 0px 0px 0px 0px;
+        border-bottom: 1px solid #3498db;
+        text-align: center;
+        color: #374054;
+        position: relative;
+        font-size: 2em;
+        font-weight: 300;
+        display: inline-block;
         color: $heading;
-        margin-bottom: 50px;
+        margin: 0 0 15px 0;
     }
 
     ul {
@@ -914,13 +961,7 @@ footer {
         }
     }
 
-    #about {
-        text-align: center;
 
-        p {
-            text-align: left;
-        }
-    }
 
 }
 
