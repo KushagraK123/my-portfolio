@@ -6,7 +6,6 @@
         <app-loader></app-loader>
       </ng-container>
         <div class="row">
-  
           <ng-container *ngFor="let course of courses">
             <div class="project shadow-large" *ngIf="getBooleanFromString(course.isActive)">
                 <div class="project-image"> 
@@ -14,12 +13,12 @@
                 </div>
                 <!-- End .project-image -->
                 <div class="project-info">
-                    <h3 style="text-align: left;">{{course.title}}</h3>
-                    <p style="text-align: left;">
+                    <p class="header-text" style="text-align: left;">{{course.title}}</p>
+                    <p class="sub-header-text" style="text-align: left;">
                         {{course.description}}
                     </p>
   
-                  <p style="text-align: left;" >  <a target="blank" href="">Certificate</a> </p>
+                  <p style="text-align: left;" ><a class="link-text" target="blank" href="{{course.time}}">View Certificate</a> </p>
   
   
                 </div>

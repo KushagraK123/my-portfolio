@@ -25,17 +25,21 @@ $text: #74808a;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 16px;
   }
 
   .card {
     border-radius: 4px;
     border: 1px solid #eee;
     background-color: #fafafa;
-    height: 40px;
-    width: 200px;
-    margin: 0 8px 16px;
-    padding: 16px;
+    margin-left: 32px;
+    margin-right: 32px;
+    margin-top: 32px;
+
+    padding-right: 24px;
+    padding-left: 24px;
+    padding-top: 16px;
+    padding-top: 16px;
+
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -48,10 +52,6 @@ $text: #74808a;
     margin-right: 0;
   }
 
-  .card.card-small {
-    height: 16px;
-    width: 168px;
-  }
 
   .card-container .card:not(.highlight-card) {
     cursor: pointer;
@@ -64,20 +64,6 @@ $text: #74808a;
 
   .card-container .card:not(.highlight-card):hover .material-icons path {
     fill: rgb(105, 103, 103);
-  }
-
-  .card.highlight-card {
-    background-color: #1976d2;
-    color: white;
-    font-weight: 600;
-    border: none;
-    width: auto;
-    min-width: 30%;
-    position: relative;
-  }
-
-  .card.card.highlight-card span {
-    margin-left: 60px;
   }
 
 /*
@@ -128,6 +114,8 @@ body {
 
 //text styles for homepage
 
+
+
 .header-text{
     font-size: 1.5em;
     font-weight: 300;
@@ -137,7 +125,7 @@ body {
     text-align: left;
 }
 .sub-header-text{
-    font-size: 1.3em;
+    font-size: 1.25em;
     font-weight: 250;
     color: $heading;
     margin: 0 0 15px 0;
@@ -153,6 +141,15 @@ body {
     text-align: left;
 }
 
+.link-text{
+    font-size: 1.1em;
+    font-weight: 120;
+    color: $base-color;
+    margin: 0 0 15px 0;
+    cursor: pointer;
+    text-align: left;
+}
+
 .no-js {
     #experience-timeline {
         > div {
@@ -160,29 +157,7 @@ body {
             padding: 10px;
             margin-bottom: 10px;
             border: 1px solid $border;
-
-            h3 {
-                font-size: 1.5em;
-                font-weight: 300;
-                color: $heading;
-                display: inline-block;
-                margin: 0;
-            }
-
-            h4 {
-                font-size: 1.2em;
-                font-weight: 300;
-                color: #7e8890;
-                margin: 0 0 15px 0;
-            }
-
-            p {
-                color: $text;
-                font-size: 0.9em;
-                margin: 0;
-            }
         }
-
         &:before, &:after {
             content: none;
         }
@@ -503,27 +478,6 @@ footer {
     padding: 15px;
     border-radius: 3px;
     text-align: left;
-
-    h3 {
-        font-size: 1.5em;
-        font-weight: 300;
-        color: $heading;
-        display: inline-block;
-        margin: 0;
-    }
-
-    h4 {
-        font-size: 1.2em;
-        font-weight: 300;
-        color: #7e8890;
-        margin: 0 0 15px 0;
-    }
-
-    p {
-        color: $text;
-        font-size: 0.9em;
-        margin: 0;
-    }
 }
 
 .vtimeline-point {
@@ -588,39 +542,13 @@ footer {
 }
 
 .education-block {
-    max-width: 700px;
+    max-width: 900px;
     margin: 0 auto 30px auto;
     padding: 15px;
     border: 1px solid $border;
     text-align: left;
-
-    h3 {
-        font-weight: 500;
-        float: left;
-        margin: 0;
-        color: $heading;
-    }
-
     span {
-        color: $text;
         float: right;
-    }
-
-    h4 {
-        color: $text;
-        clear: both;
-        font-weight: 500;
-        margin: 0 0 15px 0;
-    }
-
-    p, ul {
-        margin: 0;
-        color: $text;
-        font-size: 0.9em;
-    }
-
-    ul {
-        padding: 0 0 0 15px;
     }
 }
 
@@ -670,20 +598,6 @@ footer {
     transform: translateY(-50%);
     margin-left: 300px;
     padding: 15px;
-
-    h3 {
-        font-size: 1.5em;
-        font-weight: 300;
-        color: $heading;
-        margin: 0 0 15px 0;
-        cursor: pointer;
-    }
-
-    p {
-        color: $text;
-        margin: 0 0 15px 0;
-        font-size: 0.9em;
-    }
 }
 
 .no-image {
@@ -803,54 +717,6 @@ footer {
         margin: 0 0 15px 0;
     }
 
-}
-
-
-#getInTouch-form {
-    max-width: 500px;
-    margin: 0 auto;
-
-    input, textarea {
-        display: block;
-        width: 100%;
-        padding: 10px;
-        border-radius: 4px;
-        border: none;
-        margin-bottom: 10px;
-        background: darken($base-color, 15%);
-        color: #fff;
-        @include transition();
-        @include placeholder {
-            color: #fff;
-        }
-
-        &:focus {
-            outline: none;
-            background: darken($base-color, 25%);
-        }
-    }
-
-    textarea {
-        height: 150px;
-        resize: none;
-    }
-
-    button {
-        display: block;
-        width: 100%;
-        background: #fff;
-        border-radius: 4px;
-        padding: 5px 10px;
-        border: none;
-        color: $base-color;
-        font-weight: 700;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-        @include transition();
-
-        &:hover {
-            box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-        }
-    }
 }
 
 /*

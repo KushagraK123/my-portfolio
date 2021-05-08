@@ -28,10 +28,12 @@ export class ProjectHomepageComponent implements OnInit {
     this.projectSubscription = this.projectService.getProjectUpdateListener().subscribe(
       (projects: Project[])=>{
         this.allProjects = projects;
+        this.allProjects = this.allProjects.filter(project=>
+          project.isActive=="true"
+        );
         this.projects = this.allProjects.slice(0,Math.min(this.max,this.allProjects.length));
-        this.hideButtonActive = this.allProjects.length > 2;
+        this.hideButtonActive = this.getActiveProjectsCount() > this.max;
         this.isLoading = false;
-
       }
     );
   } 
@@ -47,6 +49,16 @@ export class ProjectHomepageComponent implements OnInit {
 
   getBooleanFromString(value: string): Boolean {
     return value == "true";
+  }
+
+  getActiveProjectsCount(): number {
+    let c=0;
+    for(let project of this.allProjects) {
+      if(this.getBooleanFromString(project.isActive)) {
+        c++;
+      }
+    }
+    return c;
   }
 
 }

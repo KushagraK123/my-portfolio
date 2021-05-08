@@ -7,17 +7,31 @@
     
   <ng-container *ngFor="let education of educations" >
     <div class="education-block" *ngIf="getBooleanFromString(education.isActive)">
-      
-      <h3>{{education.institute}}</h3>
-      <span class="education-date">{{ education.time }}</span>
-      
-      <h4>{{education.course}}</h4>
+     
+      <br/> 
+      <p class="header-text" >{{education.institute}}</p>
+      <br/>
+
+      <div style="display: flex; justify-content: space-between; margin-top: 25px;">
+        <p class="sub-header-text">{{education.course}} </p>
+        <p  class="sub-header-text">{{ education.time }}</p>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+        <p class="body-text" style="max-width: 450px;">{{education.description}} This is a long descriptipn for exmaple priuposes
+          This is a long descriptipn for exmaple priuposesThis is a long descriptipn for exmaple priuposesThis is a long descriptipn for exmaple priuposes
+        </p>
+        <p class="sub-header-text"> {{education.grade}} </p>
+      </div>
+
+
   
-      <span class="education-date" style="display: block;"> {{education.grade}} </span>
   
-      <p style="margin-right: 125px; display: block;">
-          {{education.description}}
-      </p>
+
+
+      <br/>
+
+
     </div>
   </ng-container>
 </div>

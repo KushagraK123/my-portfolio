@@ -14,13 +14,13 @@
                 </div>
                 <!-- End .project-image -->
                 <div class="project-info">
-                    <h3 class="header-text">{{project.title}}</h3>
-                    <p style="text-align: left;">
+                    <p class="header-text">{{project.title}}</p>
+                    <p class="body-text" style="max-width: 400px;">
                         {{project.description}}
                     </p>
   
-                  <p style="text-align: left;" *ngIf="!getBooleanFromString(project.hasLink)">  <a [routerLink]="['project-detail', project._id]" routerLinkActive="active">Full Project Details</a> </p>
-                  <p style="text-align: left;" *ngIf="getBooleanFromString(project.hasLink)">  <a href="{{project.projectLink}}" target="blank">View</a> </p>
+                  <p style="text-align: left;" *ngIf="!getBooleanFromString(project.hasLink)">  <a class="link-text" [routerLink]="['project-detail', project._id]" routerLinkActive="active">Full Project Details</a> </p>
+                  <p style="text-align: left;" *ngIf="getBooleanFromString(project.hasLink)">  <a class="link-text" href="{{project.projectLink}}" target="blank">View</a> </p>
   
                 </div>
                 <!-- End .project-info -->

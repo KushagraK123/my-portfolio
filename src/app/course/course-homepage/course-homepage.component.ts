@@ -25,8 +25,11 @@ export class CourseHomepageComponent implements OnInit {
     this.courseSubscription = this.courseService.getCourseUpdateListener().subscribe(
       (courses: Course[])=>{
         this.allCourses = courses;
+        this.allCourses = this.allCourses.filter(course=>
+          course.isActive=="true"
+        );
         this.courses = this.allCourses.slice(0,Math.min(this.max,this.allCourses.length));
-        this.hideButtonActive = this.allCourses.length > 2;
+        this.hideButtonActive = this.getActiveCoursesCount() > this.max;
         this.isLoading=false;
       }
     );
@@ -43,6 +46,16 @@ export class CourseHomepageComponent implements OnInit {
 
   getBooleanFromString(value: string) {
     return value == "true";
+  }
+
+  getActiveCoursesCount(): number {
+    let c=0;
+    for(let course of this.allCourses) {
+      if(this.getBooleanFromString(course.isActive)) {
+        c++;
+      }
+    }
+    return c;
   }
 
 }

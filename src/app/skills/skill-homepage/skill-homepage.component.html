@@ -9,8 +9,8 @@
     <div class="card-container">
       <ng-container *ngFor="let skill of skills">
         <ng-container *ngIf="getBooleanFromString(skill.isActive)">
-        <div class="card card-small" style="padding: 32px;"  >
-            <span>{{ skill.name }}</span>
+        <div class="card">
+            <p class="sub-header-text">{{ skill.name }}</p>
         </div>
       </ng-container>
       </ng-container>
