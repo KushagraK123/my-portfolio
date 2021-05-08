@@ -1,0 +1,164 @@
+$base-color: #3498db;
+$base-color-hover: darken($base-color, 10%);
+
+$gradient-dark: #1d6fa5;
+$gradient-light: #3498db;
+
+#lead {
+  position: relative;
+  overflow: hidden;
+  padding-top: calc(7rem + 72px);
+  padding-bottom: 7rem;
+  background: -webkit-gradient(linear, left bottom, left top, from($gradient-dark), to($gradient-light));
+  background: linear-gradient(0deg, $gradient-dark 0%, $gradient-light  100%);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 100vh;
+  min-height: 500px;
+  max-height: 600px;
+
+  @media only screen and (max-width : 992px) {  
+    height: auto;
+    min-height: auto;
+    max-height: auto;
+    padding: 100px 15px;
+  }
+}
+
+#lead-content {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  h1, h2 {
+      margin: 0;
+  }
+
+  h1 {
+      color: #fff;
+      font-weight: 900;
+      font-size: 5em;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      line-height: 0.9em;
+  }
+
+  h2 {
+      color: #ccebff;
+      font-weight: 500;
+      font-size: 2.25em;
+      margin-bottom: 15px;
+  }
+
+  @media only screen and (max-width : 992px) {
+    position: relative;
+    transform: none;
+    left: auto;
+    top: auto;
+
+    h1 {
+      font-size: 3em;
+    }
+
+    h2 {
+        font-size: 1.75em;
+    }
+  }
+
+  @media only screen and (max-width : 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+
+    a {
+        padding: 10px 20px;
+    }
+  }
+
+  @media only screen and (max-width : 480px) {
+    a {
+        font-size: 0.9em;
+        padding: 5px 10px;
+    }
+  }
+}
+
+.bg-circle {
+  z-index: 0;
+  position: absolute;
+  border-radius: 100%;
+  background: -webkit-gradient(linear, left bottom, left top, from($gradient-light), to($gradient-dark));
+  background: linear-gradient(0deg, $gradient-light  0%, $gradient-dark 100%);
+
+  &.bg-circle-1 {
+    height: 100rem;
+    width: 105rem;
+    bottom: -55rem;
+    left: -55rem;
+  }
+  
+  &.bg-circle-2 {
+    height: 65rem;
+    width: 65rem;
+    top: -25rem;
+    right: -25rem;
+  }
+  
+  &.bg-circle-3 {
+    height: 40rem;
+    width: 40rem;
+    bottom: -20rem;
+    right: 5%;
+  }
+  
+  &.bg-circle-4 {
+    height: 46rem;
+    width: 46rem;
+    top: -5rem;
+    right: 35%;
+  }
+}
+
+#lead-down {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+  bottom: 15px;
+  color: #fff;
+
+
+
+  span {
+      cursor: pointer;
+      display: block;
+      margin: 0 auto;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      border: 3px solid lighten($base-color, 25%);
+      text-align:center;
+  }
+
+  i {
+      animation: pulsate 1.5s ease;
+      animation-iteration-count: infinite;
+      padding-top: 5px;;
+  }
+
+  @media only screen and (max-width : 768px) {
+    display: none;
+  }
+}
+
+

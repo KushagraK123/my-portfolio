@@ -67,6 +67,7 @@ import { SkillHomepageComponent } from './skills/skill-homepage/skill-homepage.c
 import { ProjectDetailComponent } from './project/project-detail/project-detail.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoaderComponent } from './loader/loader.component';
+import { LeadHomepageComponent } from './lead/lead-homepage/lead-homepage.component';
 
 
 
@@ -96,7 +97,8 @@ import { LoaderComponent } from './loader/loader.component';
     ContactUsComponent,
     ProjectDetailComponent,
     FooterComponent,
-    LoaderComponent
+    LoaderComponent,
+    LeadHomepageComponent
   ],
   imports: [
     BrowserModule,
