@@ -8,11 +8,11 @@
   <ng-container *ngFor="let achievement of achievements">
     <div class="education-block" *ngIf="getBooleanFromString(achievement.isActive)">
       <div style="display: flex; justify-content: space-between;">
-        <p class="header-text">{{achievement.title}}</p>
-        <p class="sub-header-text">{{achievement.time}}</p>
+        <p class="header-text" style="margin-top: 16px; margin-left: 8px;">{{achievement.title}}</p>
+        <p class="sub-header-text" style="margin-top: 16px; margin-right: 32px;">{{achievement.time}}</p>
       </div>
       
-      <p class="body-text" style="margin-top: 32px;">{{achievement.description}}</p>
+      <p class="body-text" style="margin-top: 24px; margin-left: 8px;">{{achievement.description}}</p>
   
     </div>
   </ng-container>
