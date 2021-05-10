@@ -1,25 +1,30 @@
 <div class="project-page-header background-alt" id="lead">
-    <h1>{{project.title}}</h1>
-  
-    <div class="card-container">
-      <div class="card card-small" style="padding: 32px;" *ngFor="let skill of getSkillsArray(project.skills)" >
-        <span>{{ skill }}</span>
-      </div>
+    
+  <p class="header-text" style="text-align: center;">{{project.title}}</p>
+
+  <ng-container *ngIf="isLoading">
+    <app-loader></app-loader>
+  </ng-container>
+    
+  <p class="sub-header-text" style="text-align: center; margin-top: 48px;">Technologies Used</p>
+  <div class="card-container">
+    <div class="card" *ngFor="let skill of getSkillsArray(project.skills)">
+      <p class="sub-header-text">{{ skill }}</p>
     </div>
+  </div>  
+</div>
   
-  </div>
-  
-  <div class="container project-page-contents">
+  <div class="container project-page-contents" style="margin-top: 16px;">
     <div class="row">
-      <p><a routerLink="/" routerLinkActive="active">Back to homepage</a></p>
+
+      <p><a class="link-text" routerLink="/" routerLinkActive="active">Back to homepage</a></p>
       
-  
-      <h2>Overview</h2>
-      <p>
+      <p class="header-text" style="margin-top: 48px;">Overview</p>
+      <p class="body-text">
         {{project.description}}
       </p>
   
-      <h2>Screenshots</h2>
+      <p style="margin-top: 32px;" class="header-text">Screenshots</p>
 
       <img class="img-responsive" src="{{project.mainImage}}"  />
       <img *ngIf="checkSSAvailable(project.ss1)" class="img-responsive" src="{{project.ss1}}"/>

@@ -12,4 +12,9 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  smoothScroll = function(id: string) {
+    var scrollContainer = document.getElementById(id)!!;
+    scrollContainer.scrollIntoView({behavior:"smooth"});
+  }
+
 }

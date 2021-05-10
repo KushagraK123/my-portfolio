@@ -6,22 +6,49 @@
     </ng-container>
     
   <ng-container *ngFor="let education of educations" >
-    <div class="education-block" *ngIf="getBooleanFromString(education.isActive)">
-     
-      <br/> 
-      <p class="header-text" >{{education.institute}}</p>
-      <br/>
+    <div class="education-block " *ngIf="getBooleanFromString(education.isActive)">
+      <div class="row">
+        <div class="col col-md-4" >
+          <p class="header-text" style="text-align: center;"> Institute </p>
+        </div>
 
-      <div style="display: flex; justify-content: space-between; margin-top: 25px;">
-        <p class="sub-header-text">{{education.course}} </p>
-        <p  class="sub-header-text">{{ education.time }}</p>
+        <div class="col col-md-3">
+          <p class="header-text" style="text-align: center;"> Course </p>
+        </div>
+
+        <div class="col col-md-3">
+          <p class="header-text" style="text-align: center;"> Grade </p>
+        </div>
+        <div class="col col-md-2">
+          <p class="header-text" style="text-align: center;"> Year </p>
+        </div>
       </div>
 
+      <div class="row">
+        <div class="col col-md-4">
+          <p class="body-text"> {{education.institute}} </p>
+        </div>
+
+        <div class="col col-md-3">
+          <p class="body-text"> {{education.course}} </p>
+        </div>
+
+        <div class="col col-md-3">
+          <p class="body-text"> {{education.grade}}  </p>
+        </div>
+        <div class="col col-md-2">
+          <p class="body-text"> {{ education.time }} </p>
+        </div>
+      </div>
+
+      
+      
+   
+
       <div style="display: flex; justify-content: space-between; margin-top: 10px;">
-        <p class="body-text" style="max-width: 450px;">{{education.description}} This is a long descriptipn for exmaple priuposes
+        <p class="body-text" >{{education.description}} This is a long descriptipn for exmaple priuposes
           This is a long descriptipn for exmaple priuposesThis is a long descriptipn for exmaple priuposesThis is a long descriptipn for exmaple priuposes
         </p>
-        <p class="sub-header-text"> {{education.grade}} </p>
       </div>
 
 
