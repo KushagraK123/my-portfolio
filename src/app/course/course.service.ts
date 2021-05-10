@@ -2,11 +2,16 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Subject } from "rxjs";
 import { map } from "rxjs/operators";
+import { environment } from "src/environments/environment";
 import { Course, CourseNetwork, CourseToLocal, CourseToNetwork } from "./course.model";
 
 
 @Injectable({ providedIn: "root" })
 export class CourseService {
+
+    BACKEND_URL = environment.apiUrl + "/courses/";
+
+
     //emits data
     private courseUpdated = new Subject<Course[]>();
 
@@ -18,7 +23,7 @@ export class CourseService {
     }
 
      getCourses() {
-         this.httpClient.get< CourseNetwork[] >("http://localhost:3000/api/courses").pipe(
+         this.httpClient.get< CourseNetwork[] >(this.BACKEND_URL).pipe(
              map((courseData)=> {
                  return courseData.map( (it)=> 
                     CourseToLocal(it)
@@ -36,7 +41,7 @@ export class CourseService {
     }
     
     updateCourse(course: Course) {
-        let url = "http://localhost:3000/api/courses/" + course._id;
+        let url = this.BACKEND_URL + course._id;
         this.httpClient.put< CourseNetwork >(url, CourseToNetwork(course)).pipe(
             map((course)=> {
                 return CourseToLocal(course);
@@ -52,7 +57,7 @@ export class CourseService {
    }
 
    deleteCourse(courseId: String) {
-       let requestUrl = "http://localhost:3000/api/courses/"+courseId;
+       let requestUrl = this.BACKEND_URL + courseId;
     this.httpClient.delete<CourseNetwork>(requestUrl)
     .subscribe(()=> {
         this.courses = this.courses.filter( it=> 
@@ -69,7 +74,7 @@ export class CourseService {
      
 
       addCourse(course: Course) {    
-          this.httpClient.post<{result:CourseNetwork, message: string}>("http://localhost:3000/api/courses", CourseToNetwork(course)).subscribe(
+          this.httpClient.post<{result:CourseNetwork, message: string}>(this.BACKEND_URL, CourseToNetwork(course)).subscribe(
               (responseData)=> {
                   this.courses.push(CourseToLocal(responseData.result));
                   this.courseUpdated.next([...this.courses]);

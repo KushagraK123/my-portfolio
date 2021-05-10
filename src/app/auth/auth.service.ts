@@ -2,11 +2,14 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Subject } from "rxjs";
 import { map } from "rxjs/operators";
+import { environment } from "src/environments/environment";
 import { User } from "./user.model";
 
 
 @Injectable({ providedIn: "root" })
 export class AuthService {
+
+    BACKEND_URL = environment.apiUrl + "/users/";
 
     constructor(private httpClient: HttpClient) {
     }
@@ -34,7 +37,7 @@ export class AuthService {
 
 
       login(userName: string, password: string) {
-          this.httpClient.post< {message: string, user: User }>("http://localhost:3000/api/users/login", {userName: userName, password})
+          this.httpClient.post< {message: string, user: User }>(this.BACKEND_URL+"login", {userName: userName, password})
           .pipe(
             map((result)=> {
                 return result.user;

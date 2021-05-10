@@ -11,8 +11,10 @@ export const environment = {
     storageBucket: "my-portfolio-e31d4.appspot.com",
     messagingSenderId: "765738492598",
     appId: "1:765738492598:web:8cc7c7cfbf215f5099bc17",
-    measurementId: "G-D08DMPTE1R"
-  }
+    measurementId: "G-D08DMPTE1R",
+  },
+  apiUrl: "http://localhost:3000/api"
+
 };
 
 /*

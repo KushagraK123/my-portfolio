@@ -2,11 +2,16 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Subject } from "rxjs";
 import { map } from "rxjs/operators";
+import { environment } from "src/environments/environment";
 import { Bio, BioNetwork, BioToLocal, BioToNetwork } from "./bio.model";
 
 
 @Injectable({ providedIn: "root" })
 export class BioService {
+
+    BACKEND_URL = environment.apiUrl + "/bio/";
+
+
     //emits data
     private bioUpdated = new Subject<Bio>();
 
@@ -18,7 +23,7 @@ export class BioService {
     }
 
      getBio() {
-         this.httpClient.get< BioNetwork >("http://localhost:3000/api/bio").pipe(
+         this.httpClient.get< BioNetwork >(this.BACKEND_URL).pipe(
              map((bioData)=> {
                  return BioToLocal(bioData);
              })
@@ -30,7 +35,7 @@ export class BioService {
     }
     
     updateBio(bio: Bio) {
-        let url = "http://localhost:3000/api/bio/"+bio._id;
+        let url = this.BACKEND_URL + bio._id;
         this.httpClient.put<{ message: string, bio: BioNetwork }>(url, BioToNetwork(bio)).pipe(
             map((result)=> {
                 return BioToLocal(result.bio);

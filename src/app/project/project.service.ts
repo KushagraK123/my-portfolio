@@ -2,11 +2,15 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Subject } from "rxjs";
 import { map } from "rxjs/operators";
+import { environment } from "src/environments/environment";
 import { Project, ProjectNetwork, ProjectToLocal, ProjectToNetwork } from "./project.model";
 
 
 @Injectable({ providedIn: "root" })
 export class ProjectService {
+
+    BACKEND_URL = environment.apiUrl + "/projects/";
+
     //emits data
     private projectUpdated = new Subject<Project[]>();
 
@@ -18,7 +22,7 @@ export class ProjectService {
     }
 
      getProjects() {
-         this.httpClient.get< ProjectNetwork[] >("http://localhost:3000/api/projects").pipe(
+         this.httpClient.get< ProjectNetwork[] >(this.BACKEND_URL).pipe(
              map((projectData)=> {
                  return projectData.map( (it)=> 
                     ProjectToLocal(it)
@@ -36,7 +40,7 @@ export class ProjectService {
     }
     
     updateProject(project: Project) {
-        let url = "http://localhost:3000/api/projects/" + project._id;
+        let url = this.BACKEND_URL + project._id;
         this.httpClient.put< ProjectNetwork >(url, ProjectToNetwork(project)).pipe(
             map((project)=> {
                 return ProjectToLocal(project);
@@ -52,7 +56,7 @@ export class ProjectService {
    }
 
    deleteProject(projectId: String) {
-       let requestUrl = "http://localhost:3000/api/projects/"+projectId;
+       let requestUrl = this.BACKEND_URL + projectId;
     this.httpClient.delete<ProjectNetwork>(requestUrl)
     .subscribe(()=> {
         this.projects = this.projects.filter( it=> 
@@ -76,7 +80,7 @@ export class ProjectService {
      
 
       addProject(project: Project) {    
-          this.httpClient.post<{result:ProjectNetwork, message: string}>("http://localhost:3000/api/projects", ProjectToNetwork(project)).subscribe(
+          this.httpClient.post<{result:ProjectNetwork, message: string}>(this.BACKEND_URL, ProjectToNetwork(project)).subscribe(
               (responseData)=> {
                   this.projects.push(ProjectToLocal(responseData.result));
                   this.projectUpdated.next([...this.projects]);

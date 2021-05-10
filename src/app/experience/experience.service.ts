@@ -2,10 +2,13 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Subject } from "rxjs";
 import { map } from "rxjs/operators";
+import { environment } from "src/environments/environment";
 import { Experience, ExperienceNetwork, ExperienceToLocal, ExperienceToNetwork } from "./experience.model";
 
 @Injectable({ providedIn: "root" })
 export class ExperienceService {
+
+    BACKEND_URL = environment.apiUrl + "/experiences/";
 
     experiences: Experience[] = [
     ];
@@ -21,7 +24,7 @@ export class ExperienceService {
     }
 
      getExperiences() {
-         this.httpClient.get< ExperienceNetwork[] >("http://localhost:3000/api/experiences").pipe(
+         this.httpClient.get< ExperienceNetwork[] >(this.BACKEND_URL).pipe(
              map((experienceData)=> {
                  return experienceData.map( (it)=> 
                     ExperienceToLocal(it)
@@ -39,7 +42,7 @@ export class ExperienceService {
     }
     
     updateExperience(experience: Experience) {
-        let url = "http://localhost:3000/api/experiences/"+experience._id;
+        let url = this.BACKEND_URL + experience._id;
         this.httpClient.put< ExperienceNetwork >(url, ExperienceToNetwork(experience)).pipe(
             map((experience)=> {
                 return ExperienceToLocal(experience);
@@ -55,7 +58,7 @@ export class ExperienceService {
    }
 
    deleteExperience(experienceId: String) {
-       let requestUrl = "http://localhost:3000/api/experiences/"+experienceId;
+       let requestUrl = this.BACKEND_URL + experienceId;
     this.httpClient.delete<ExperienceNetwork>(requestUrl)
     .subscribe(()=> {
         this.experiences = this.experiences.filter( it=> 
@@ -66,7 +69,7 @@ export class ExperienceService {
 }
 
       addExperience(experience: Experience) {    
-          this.httpClient.post<{result:ExperienceNetwork, message: string}>("http://localhost:3000/api/experiences", ExperienceToNetwork(experience)).subscribe(
+          this.httpClient.post<{result:ExperienceNetwork, message: string}>(this.BACKEND_URL, ExperienceToNetwork(experience)).subscribe(
               (responseData)=> {
                   this.experiences.push(ExperienceToLocal(responseData.result));
                   this.experienceUpdated.next([...this.experiences]);

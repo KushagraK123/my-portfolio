@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -10,17 +10,21 @@ import { User } from '../user.model';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy{
 
   constructor(private authService: AuthService, private router: Router) { }
 
   private loginSubscription: Subscription = new Subscription();
 
+  ngOnDestroy(){
+    this.loginSubscription.unsubscribe();
+  }
+
 
   ngOnInit(): void {
     this.loginSubscription = this.authService.getLoginUpdateListener().subscribe(
       (user: User)=>{
-       console.log("USer updated" + user);
+       console.log("User updated" + user);
        if(user!=null && user != undefined) {
         this.router.navigate(['/admin']);
        }
