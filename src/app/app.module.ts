@@ -68,6 +68,7 @@ import { ProjectDetailComponent } from './project/project-detail/project-detail.
 import { FooterComponent } from './footer/footer.component';
 import { LoaderComponent } from './loader/loader.component';
 import { LeadHomepageComponent } from './lead/lead-homepage/lead-homepage.component';
+import { ErrorInterceptor } from './errors/error-interceptor';
 
 
 
@@ -142,7 +143,10 @@ import { LeadHomepageComponent } from './lead/lead-homepage/lead-homepage.compon
     MatSortModule,
     MatPaginatorModule
   ],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
