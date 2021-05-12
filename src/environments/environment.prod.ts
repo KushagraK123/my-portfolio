@@ -9,7 +9,7 @@ export const environment = {
     appId: "1:765738492598:web:8cc7c7cfbf215f5099bc17",
     measurementId: "G-D08DMPTE1R"
   },
-  apiUrl: "http://portfoliobackend-env.eba-ytmdp2yp.us-east-2.elasticbeanstalk.com/api"
+  apiUrl: "https://kushagra-portfolio-backend.herokuapp.com/api"
 
   
 };
