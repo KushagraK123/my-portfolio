@@ -7,55 +7,49 @@
     
   <ng-container *ngFor="let education of educations" >
     <div class="education-block " *ngIf="getBooleanFromString(education.isActive)">
-      <div class="row">
-        <div class="col col-md-4" >
+      
+      <div class="col col-md-4">
+        <div class="row" >
           <p class="header-text" style="text-align: center;"> Institute </p>
         </div>
-
-        <div class="col col-md-3">
-          <p class="header-text" style="text-align: center;"> Course </p>
-        </div>
-
-        <div class="col col-md-3">
-          <p class="header-text" style="text-align: center;"> Grade </p>
-        </div>
-        <div class="col col-md-2">
-          <p class="header-text" style="text-align: center;"> Year </p>
+        <div class="row">
+          <p class="body-text"> {{education.institute}} </p>
         </div>
       </div>
 
-      <div class="row">
-        <div class="col col-md-4">
-          <p class="body-text"> {{education.institute}} </p>
+      <div class="col col-md-3">
+        <div class="row ">
+          <p class="header-text" style="text-align: center;"> Course </p>
         </div>
-
-        <div class="col col-md-3">
+        <div class="row ">
           <p class="body-text"> {{education.course}} </p>
         </div>
+      </div>
 
-        <div class="col col-md-3">
+      <div class="col col-md-3">
+        <div class="row">
+          <p class="header-text" style="text-align: center;"> Grade </p>
+        </div>
+        <div class="row">
           <p class="body-text"> {{education.grade}}  </p>
         </div>
-        <div class="col col-md-2">
+      </div>
+
+      <div class="col col-md-2">
+        <div class="row">
+          <p class="header-text" style="text-align: center;"> Year </p>
+        </div>
+        <div class="row">
           <p class="body-text"> {{ education.time }} </p>
         </div>
       </div>
 
-      
-      
-   
-
-      <div style="display: flex; justify-content: space-between; margin-top: 10px;">
-        <p class="body-text" >{{education.description}} </p>
+      <div class="row">
+        <div class="col col-md-12">
+        <p class="body-text" style="margin-top: 32px;">{{education.description}} 
+        </p>
       </div>
-
-
-  
-  
-
-
-      <br/>
-
+    </div>
 
     </div>
   </ng-container>

@@ -34,6 +34,7 @@ export class LeadHomepageComponent implements OnInit {
   }
 
   smoothScroll = function(id: string) {
+
     var scrollContainer = document.getElementById(id)!!;
     scrollContainer.scrollIntoView({behavior:"smooth"});
   }
