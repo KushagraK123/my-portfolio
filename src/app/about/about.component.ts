@@ -30,7 +30,7 @@ export class AboutComponent implements OnInit {
     this.bioSubscription = this.bioService.getBioUpdateListener().subscribe(
       (bio: Bio)=>{
         this.bio = bio;
-        this.isLoading = true;
+        this.isLoading = false;
       }
     );
   }
