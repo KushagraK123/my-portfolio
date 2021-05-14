@@ -11,6 +11,7 @@ import { BioService } from 'src/app/bio/bio.service';
 export class LeadHomepageComponent implements OnInit {
   
   private bioSubscription: Subscription = new Subscription();
+  isLoading=true;
 
   bio: Bio= {
     _id: "", 
@@ -29,12 +30,12 @@ export class LeadHomepageComponent implements OnInit {
     this.bioSubscription = this.bioService.getBioUpdateListener().subscribe(
       (bio: Bio)=>{
         this.bio = bio;
+        this.isLoading=false;
       }
     );
   }
 
   smoothScroll = function(id: string) {
-
     var scrollContainer = document.getElementById(id)!!;
     scrollContainer.scrollIntoView({behavior:"smooth"});
   }

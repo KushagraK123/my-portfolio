@@ -3,6 +3,10 @@
                 <h2>About Me</h2>
             </div>
 
+            <ng-container *ngIf="isLoading">
+                <app-loader></app-loader>
+            </ng-container>
+
             <div>
                 <p class="header-text" style="line-height: 1.75em; margin-top: 25px;">
                     {{bio.aboutme}}

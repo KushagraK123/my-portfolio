@@ -69,6 +69,7 @@ import { FooterComponent } from './footer/footer.component';
 import { LoaderComponent } from './loader/loader.component';
 import { LeadHomepageComponent } from './lead/lead-homepage/lead-homepage.component';
 import { ErrorInterceptor } from './errors/error-interceptor';
+import { LoaderWhiteComponent } from './loader-white/loader-white.component';
 
 
 
@@ -99,7 +100,8 @@ import { ErrorInterceptor } from './errors/error-interceptor';
     ProjectDetailComponent,
     FooterComponent,
     LoaderComponent,
-    LeadHomepageComponent
+    LeadHomepageComponent,
+    LoaderWhiteComponent
   ],
   imports: [
     BrowserModule,
