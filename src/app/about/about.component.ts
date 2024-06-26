@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
 import { Bio } from '../bio/bio.model';
 import { BioService } from '../bio/bio.service';
 
@@ -10,7 +9,6 @@ import { BioService } from '../bio/bio.service';
 })
 export class AboutComponent implements OnInit {
 
-  private bioSubscription: Subscription = new Subscription();
   constructor(private bioService: BioService) { }
   bio: Bio= {
     _id: "", 
@@ -26,12 +24,6 @@ export class AboutComponent implements OnInit {
   isLoading = true;
 
   ngOnInit(): void {
-    this.bioService.getBio();
-    this.bioSubscription = this.bioService.getBioUpdateListener().subscribe(
-      (bio: Bio)=>{
-        this.bio = bio;
-        this.isLoading = false;
-      }
-    );
+    this.bio = this.bioService.getBio();
   }
 }

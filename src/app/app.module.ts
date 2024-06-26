@@ -7,7 +7,6 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { HeaderComponent } from './header/header.component';
 import { AboutComponent } from './about/about.component';
 import { ExperienceComponent } from './experience/experience.component';
-import { LoginComponent } from './auth/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
@@ -40,23 +39,14 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { AdminComponent } from './admin/admin.component';
-import { DeleteConfirmationDialogComponent } from './delete-confirmation-dialog/delete-confirmation-dialog.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { EducationAdminComponent } from './education/education-admin/education-admin.component';
-import { AuthInterceptor } from './auth/auth.interceptor';
-import { BioAdminComponent } from './bio/bio-admin/bio-admin.component';
 import { ContactUsComponent } from './bio/contact-us/contact-us.component';
 
-import { AdminAchievementComponent } from './achievements/admin-achievement/admin-achievement.component';
-import { ExperienceAdminComponent } from './experience/experience-admin/experience-admin.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 
 import { environment } from 'src/environments/environment';
-import { CourseAdminComponent } from './course/course-admin/course-admin.component';
-import { ProjectAdminComponent } from './project/project-admin/project-admin.component';
 import { ExperienceHomepageComponent } from './experience/experience-homepage/experience-homepage.component';
 import { EducationHomepageComponent } from './education-homepage/education-homepage.component';
 import { ProjectHomepageComponent } from './project/project-homepage/project-homepage.component';
@@ -79,15 +69,6 @@ import { LoaderWhiteComponent } from './loader-white/loader-white.component';
     HeaderComponent,
     AboutComponent,
     ExperienceComponent,
-    LoginComponent,
-    AdminComponent,
-    DeleteConfirmationDialogComponent,
-    EducationAdminComponent,
-    BioAdminComponent,
-    AdminAchievementComponent,
-    ExperienceAdminComponent,
-    CourseAdminComponent,
-    ProjectAdminComponent,
     ExperienceHomepageComponent,
     EducationHomepageComponent,
     ProjectHomepageComponent,
@@ -144,7 +125,6 @@ import { LoaderWhiteComponent } from './loader-white/loader-white.component';
     MatPaginatorModule
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]

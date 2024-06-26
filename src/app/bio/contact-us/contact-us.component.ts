@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
 import { Bio } from '../bio.model';
 import { BioService } from '../bio.service';
 
@@ -10,7 +9,6 @@ import { BioService } from '../bio.service';
 })
 export class ContactUsComponent implements OnInit {
 
-  private bioSubscription: Subscription = new Subscription();
 
   bio: Bio= {
     _id: "", 
@@ -45,12 +43,7 @@ export class ContactUsComponent implements OnInit {
   constructor(private bioService: BioService) { }
 
   ngOnInit(): void {
-    this.bioService.getBio();
-    this.bioSubscription = this.bioService.getBioUpdateListener().subscribe(
-      (bio: Bio)=>{
-        this.bio = bio;
-      }
-    );
+    this.bio = this.bioService.getBio();
   }
 
 }

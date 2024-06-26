@@ -24,7 +24,7 @@ export class FooterComponent implements OnInit {
     email: ""
   };
   
-  currentYear = 2021;
+  currentYear = 2024;
   constructor(private bioService: BioService, private router: Router) { 
     this.currentYear = new Date().getFullYear();
   }
@@ -32,12 +32,7 @@ export class FooterComponent implements OnInit {
   
 
   ngOnInit(): void {
-    this.bioService.getBio();
-    this.bioSubscription = this.bioService.getBioUpdateListener().subscribe(
-      (bio: Bio)=>{
-        this.bio = bio;
-      }
-    );
+    this.bio = this.bioService.getBio();
   }
 
   smoothScroll = function(id: string) {

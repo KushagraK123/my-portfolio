@@ -26,13 +26,7 @@ export class LeadHomepageComponent implements OnInit {
   constructor(private bioService: BioService) { }
 
   ngOnInit(): void {
-    this.bioService.getBio();
-    this.bioSubscription = this.bioService.getBioUpdateListener().subscribe(
-      (bio: Bio)=>{
-        this.bio = bio;
-        this.isLoading=false;
-      }
-    );
+    this.bio = this.bioService.getBio();
   }
 
   smoothScroll = function(id: string) {
