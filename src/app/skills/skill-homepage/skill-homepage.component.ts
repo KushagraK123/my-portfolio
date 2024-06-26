@@ -11,20 +11,13 @@ import { SkillService } from '../skills.service';
 export class SkillHomepageComponent implements OnInit {
   
   skills: Skill[] = [];
-  private skillSubscription: Subscription = new Subscription();
-  isLoading=true;
+  isLoading=false;
 
   
   constructor( private skillService: SkillService ) { }
 
   ngOnInit(): void {
-    this.skillService.getSkills();
-    this.skillSubscription = this.skillService.getSkillsUpdateListener().subscribe(
-      (skills: Skill[])=>{
-        this.skills = skills;
-        this.isLoading=false;
-      }
-    );
+    this.skills = this.skillService.getSkills();
   }
   
   getBooleanFromString(value: string) {

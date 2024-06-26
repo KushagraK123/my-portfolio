@@ -41,7 +41,6 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { AdminComponent } from './admin/admin.component';
-import { SkillsAdminComponent } from './skills/skills-admin/skills-admin.component';
 import { DeleteConfirmationDialogComponent } from './delete-confirmation-dialog/delete-confirmation-dialog.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -82,7 +81,6 @@ import { LoaderWhiteComponent } from './loader-white/loader-white.component';
     ExperienceComponent,
     LoginComponent,
     AdminComponent,
-    SkillsAdminComponent,
     DeleteConfirmationDialogComponent,
     EducationAdminComponent,
     BioAdminComponent,
