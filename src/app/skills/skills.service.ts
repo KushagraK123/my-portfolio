@@ -41,15 +41,20 @@ export class SkillService {
             "name": "Docker", 
             "sequence": 2,
             "isActive":'true'
-        },{
+        }, {
+            _id: "7",
+            "name": "Angular", 
+            "sequence": 3,
+            "isActive":'true'
+        }, {
             _id: "7",
             "name": "Android Development", 
-            "sequence": 2,
+            "sequence": 4,
             "isActive":'true'
-        },{
+        }, {
             _id: "2",
             "name": "MySQL", 
-            "sequence": 2,
+            "sequence": 5,
             "isActive":'false'
         }
     ];
