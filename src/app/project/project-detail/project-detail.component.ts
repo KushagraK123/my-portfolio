@@ -11,7 +11,6 @@ import { ProjectService } from '../project.service';
 })
 export class ProjectDetailComponent implements OnInit {
 
-  private projectSubscription: Subscription = new Subscription();
   projectId:string = this.route.snapshot.paramMap.get('id')!!;
   project = this.projectService.getProjectWithId(this.projectId)!!;
   isLoading=false;
@@ -21,23 +20,13 @@ export class ProjectDetailComponent implements OnInit {
   }
 
   constructor(private route: ActivatedRoute, private projectService: ProjectService) {  
-    this.projectService.getProjects();
-    if(this.project == null || this.project == undefined) {
-      this.isLoading = true;
-    }
-    this.projectSubscription = this.projectService.getProjectUpdateListener().subscribe(
-      (projects: Project[])=>{
-        this.projects = projects;
-        this.project = this.projects.find(it=>
-          it._id == this.projectId
-        )!!
-        this.isLoading = false;
-      }
-    );
-
-   }
-
-
+    this.projects = this.projectService.getProjects();
+    this.isLoading = false;
+ 
+    this.project = this.projects.find(it=>
+        it._id == this.projectId
+    )!!
+  }
 
   checkSSAvailable(link: string) {
     return !(link=="");

@@ -10,7 +10,6 @@ import { BioService } from 'src/app/bio/bio.service';
 })
 export class LeadHomepageComponent implements OnInit {
   
-  private bioSubscription: Subscription = new Subscription();
   isLoading=true;
 
   bio: Bio= {
@@ -27,11 +26,11 @@ export class LeadHomepageComponent implements OnInit {
 
   ngOnInit(): void {
     this.bio = this.bioService.getBio();
+    this.isLoading = false;
   }
 
   smoothScroll = function(id: string) {
     var scrollContainer = document.getElementById(id)!!;
     scrollContainer.scrollIntoView({behavior:"smooth"});
   }
-
 }

@@ -17,10 +17,10 @@ export class BioService {
         _id: "", 
         name: "Kushagra Kasliwal",
         linkedin: "https://www.linkedin.com/in/kushagra-kasliwal-a5b188158/",
-        github: "",
+        github: "github.com",
         resume: "",
-        aboutme: "", 
-        hackerrank: "",
+        aboutme: "Hello I am Kushagra", 
+        hackerrank: "hackerrank.com",
         email: "kushagrakasliwal47@gmail.com"
     };
       

@@ -10,7 +10,6 @@ import { AchievementService } from '../achievement.service';
 })
 export class AchievementHomepageComponent implements OnInit {
 
-  private achievementSubscription: Subscription = new Subscription();
   achievements: Achievement[] = [];
   isLoading=true;
 
@@ -18,13 +17,8 @@ export class AchievementHomepageComponent implements OnInit {
 
 
   constructor( private achievementService: AchievementService ) {
-    this.achievementService.getAchievements();
-    this.achievementSubscription = this.achievementService.getAchievementUpdateListener().subscribe(
-      (achievements: Achievement[])=>{
-        this.achievements = achievements;
-        this.isLoading = false;
-      }
-    );
+    this.achievements = this.achievementService.getAchievements();
+    this.isLoading = false
   }
 
   ngOnInit(): void {

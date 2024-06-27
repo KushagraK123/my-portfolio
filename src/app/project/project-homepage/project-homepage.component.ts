@@ -11,7 +11,6 @@ import { ProjectService } from '../project.service';
 })
 export class ProjectHomepageComponent implements OnInit {
 
-  private projectSubscription: Subscription = new Subscription();
   allProjects: Project[] = [];
   projects: Project[] = [];
   showAll: boolean = false
@@ -24,19 +23,16 @@ export class ProjectHomepageComponent implements OnInit {
   constructor( private projectService: ProjectService ) { }
 
   ngOnInit(): void {
-    this.projectService.getProjects();
-    this.projectSubscription = this.projectService.getProjectUpdateListener().subscribe(
-      (projects: Project[])=>{
-        this.allProjects = projects;
-        this.allProjects = this.allProjects.filter(project=>
-          project.isActive=="true"
-        );
-        this.projects = this.allProjects.slice(0,Math.min(this.max,this.allProjects.length));
-        this.hideButtonActive = this.getActiveProjectsCount() > this.max;
-        this.isLoading = false;
-      }
+    this.allProjects = this.projectService.getProjects();
+     
+    this.allProjects = this.allProjects.filter(project=>
+      project.isActive=="true"
     );
-  } 
+    this.projects = this.allProjects.slice(0,Math.min(this.max,this.allProjects.length));
+    this.hideButtonActive = this.getActiveProjectsCount() > this.max;
+      this.isLoading = false;
+  }
+    
 
   toggleViewMore() {
     this.showAll = !this.showAll

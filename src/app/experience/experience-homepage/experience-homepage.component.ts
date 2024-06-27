@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
 import { Experience } from '../experience.model';
 import { ExperienceService } from '../experience.service';
 
@@ -10,7 +9,6 @@ import { ExperienceService } from '../experience.service';
 })
 export class ExperienceHomepageComponent implements OnInit {
 
-  private experienceSubscription: Subscription = new Subscription();
   experiences: Experience[] = [];
   isLoading=true;
 
@@ -20,13 +18,8 @@ export class ExperienceHomepageComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.experienceService.getExperiences();
-    this.experienceSubscription = this.experienceService.getExperienceUpdateListener().subscribe(
-      (experiences: Experience[])=>{
-        this.experiences = experiences;
-        this.isLoading=false;
-      }
-    );
+    this.experiences = this.experienceService.getExperiences();
+    this.isLoading=false;
   }
 
   getBooleanFromString(value: string): Boolean {

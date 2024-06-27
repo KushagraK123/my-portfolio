@@ -25,5 +25,6 @@ export class AboutComponent implements OnInit {
 
   ngOnInit(): void {
     this.bio = this.bioService.getBio();
+    this.isLoading = false
   }
 }

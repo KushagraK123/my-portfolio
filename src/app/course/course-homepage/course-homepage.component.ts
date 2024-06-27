@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
 import { Course } from '../course.model';
 import { CourseService } from '../course.service';
 
@@ -10,30 +9,26 @@ import { CourseService } from '../course.service';
 })
 export class CourseHomepageComponent implements OnInit {
 
-  private courseSubscription: Subscription = new Subscription();
   allCourses: Course[] = [];
   courses: Course[] = [];
   showAll: boolean = false;
   max: number = 2;
   hideButtonActive = false;
-  isLoading=true;
+  isLoading=false;
 
   constructor( private courseService: CourseService ) { }
 
   ngOnInit(): void {
-    this.courseService.getCourses();
-    this.courseSubscription = this.courseService.getCourseUpdateListener().subscribe(
-      (courses: Course[])=>{
-        this.allCourses = courses;
-        this.allCourses = this.allCourses.filter(course=>
-          course.isActive=="true"
-        );
-        this.courses = this.allCourses.slice(0,Math.min(this.max,this.allCourses.length));
-        this.hideButtonActive = this.getActiveCoursesCount() > this.max;
-        this.isLoading=false;
-      }
+    this.allCourses = this.courseService.getCourses();  
+    this.allCourses = this.allCourses.filter(course=>
+      course.isActive=="true"
     );
-  } 
+    this.courses = this.allCourses.slice(0,Math.min(this.max,this.allCourses.length));
+    this.hideButtonActive = this.getActiveCoursesCount() > this.max;
+    this.isLoading=false;
+  }
+    
+  
 
   toggleViewMore() {
     this.showAll = !this.showAll
@@ -57,5 +52,4 @@ export class CourseHomepageComponent implements OnInit {
     }
     return c;
   }
-
 }
