@@ -14,7 +14,6 @@ export class HomepageComponent implements OnInit {
 
   constructor(private analyticsService: AnalyticsService) {
     let analytics = {info: "This is test info2", time: "This is test time1"};
-    this.analyticsService.saveAnalytics(analytics);
   }
 
   ngOnInit(): void {

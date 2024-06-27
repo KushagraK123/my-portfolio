@@ -1,8 +1,5 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Subject } from "rxjs";
-import { map } from "rxjs/operators";
-import { environment } from "src/environments/environment";
 import { Achievement, AchievementNetwork, AchievementToLocal, AchievementToNetwork } from "./achievement.model";
 
 @Injectable({ providedIn: "root" })

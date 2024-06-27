@@ -46,7 +46,6 @@ import { ContactUsComponent } from './bio/contact-us/contact-us.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 
-import { environment } from 'src/environments/environment';
 import { ExperienceHomepageComponent } from './experience/experience-homepage/experience-homepage.component';
 import { EducationHomepageComponent } from './education-homepage/education-homepage.component';
 import { ProjectHomepageComponent } from './project/project-homepage/project-homepage.component';
@@ -84,7 +83,6 @@ import { LoaderWhiteComponent } from './loader-white/loader-white.component';
   ],
   imports: [
     BrowserModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig, "cloud"),
     AngularFireStorageModule,
     AppRoutingModule,
     FormsModule,
