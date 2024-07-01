@@ -99,7 +99,7 @@ body.active {
 .link-text {
   font-size: 1.1em;
   font-weight: 120;
-  color: #3498db;
+  color: #2d6ce0;
   margin: 0 0 0 0;
   cursor: pointer;
   text-align: left;
@@ -154,7 +154,7 @@ header li {
 
 header a {
   display: block;
-  color: #3498db;
+  color: #2d6ce0;
   padding: 10px;
   cursor: pointer;
 }
@@ -167,7 +167,7 @@ header a:hover {
 }
 
 header a:focus {
-  color: #3498db;
+  color: #2d6ce0;
   text-decoration: none;
 }
 
@@ -190,7 +190,7 @@ header.sticky {
   position: fixed;
   right: 15px;
   top: 10px;
-  color: #3498db;
+  color: #2d6ce0;
   font-size: 1.5em;
   z-index: 20;
   padding: 0 7px;
@@ -207,7 +207,7 @@ header.sticky {
   padding-right: 15px;
   padding-top: 10px;
   cursor: pointer;
-  color: #3498db;
+  color: #2d6ce0;
 }
 
 #mobile-menu-close span {
@@ -272,7 +272,7 @@ footer {
 }
 
 .social a:hover {
-  color: #3498db;
+  color: #2d6ce0;
 }
 
 .btn-rounded-white {
@@ -286,7 +286,7 @@ footer {
 }
 
 .btn-rounded-white:hover {
-  color: #3498db;
+  color: #2d6ce0;
   background: #fff;
   text-decoration: none;
 }
@@ -316,7 +316,7 @@ footer {
   left: 0;
   right: 0;
   margin: 0 auto;
-  background: #3498db;
+  background: #2d6ce0;
 }
 
 .background-alt {
@@ -350,7 +350,7 @@ footer {
 #about h2 {
   list-style-type: none;
   padding: 0px 0px 0px 0px;
-  border-bottom: 1px solid #3498db;
+  border-bottom: 1px solid #2d6ce0;
   text-align: center;
   color: #374054;
   position: relative;
@@ -382,7 +382,7 @@ footer {
 #experience h2 {
   list-style-type: none;
   padding: 0px 0px 0px 0px;
-  border-bottom: 1px solid #3498db;
+  border-bottom: 1px solid #2d6ce0;
   text-align: center;
   color: #374054;
   position: relative;
@@ -408,7 +408,7 @@ footer {
   right: auto;
   height: 100%;
   width: 3px;
-  background: #3498db;
+  background: #2d6ce0;
   z-index: 0;
 }
 
@@ -417,8 +417,8 @@ footer {
   content: "";
   width: 3px;
   height: 40px;
-  background: #3498db;
-  background: linear-gradient(to bottom, #3498db, rgba(52, 152, 219, 0));
+  background: #2d6ce0;
+  background: linear-gradient(to bottom, #2d6ce0, rgba(52, 152, 219, 0));
   top: 100%;
   left: 213px;
 }
@@ -444,7 +444,7 @@ footer {
   color: #fff;
   width: 50px;
   height: 50px;
-  background: #3498db;
+  background: #2d6ce0;
   border-radius: 50%;
   float: left;
   z-index: 99;
@@ -482,7 +482,7 @@ footer {
 #education h2 {
   list-style-type: none;
   padding: 0px 0px 0px 0px;
-  border-bottom: 1px solid #3498db;
+  border-bottom: 1px solid #2d6ce0;
   text-align: center;
   color: #374054;
   position: relative;
@@ -516,7 +516,7 @@ footer {
 #projects h2, #current-projects h2 {
   list-style-type: none;
   padding: 0px 0px 0px 0px;
-  border-bottom: 1px solid #3498db;
+  border-bottom: 1px solid #2d6ce0;
   text-align: center;
   color: #374054;
   position: relative;
@@ -574,7 +574,7 @@ footer {
 #skills h2 {
   list-style-type: none;
   padding: 0px 0px 0px 0px;
-  border-bottom: 1px solid #3498db;
+  border-bottom: 1px solid #2d6ce0;
   text-align: center;
   color: #374054;
   position: relative;
@@ -616,7 +616,7 @@ footer {
 
 #courses h2 {
   list-style-type: none;
-  border-bottom: 1px solid #3498db;
+  border-bottom: 1px solid #2d6ce0;
   text-align: center;
   color: #374054;
   position: relative;
@@ -633,7 +633,7 @@ footer {
 
 #achievements h2 {
   list-style-type: none;
-  border-bottom: 1px solid #3498db;
+  border-bottom: 1px solid #2d6ce0;
   text-align: center;
   color: #374054;
   position: relative;
@@ -653,7 +653,7 @@ footer {
 #getInTouch h2 {
   list-style-type: none;
   padding: 0px 0px 0px 0px;
-  border-bottom: 1px solid #3498db;
+  border-bottom: 1px solid #2d6ce0;
   text-align: center;
   color: #374054;
   position: relative;

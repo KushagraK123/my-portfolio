@@ -21,5 +21,4 @@ export class EducationHomepageComponent implements OnInit {
   getBooleanFromString(value: string): Boolean {
     return value == "true";
   }
-
 }

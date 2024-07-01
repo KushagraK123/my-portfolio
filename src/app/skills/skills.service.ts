@@ -26,9 +26,20 @@ export class SkillService {
             "name": "Azure", 
             "sequence": 2,
             "isActive":'true'
-        },{
+        },
+        {
             _id: "5",
             "name": "Design Patterns", 
+            "sequence": 2,
+            "isActive":'true'
+        },{
+            _id: "5",
+            "name": "Micro Services", 
+            "sequence": 2,
+            "isActive":'true'
+        },{
+            _id: "5",
+            "name": "Agile Development", 
             "sequence": 2,
             "isActive":'true'
         },{

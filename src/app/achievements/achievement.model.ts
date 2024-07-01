@@ -3,6 +3,8 @@ export interface AchievementNetwork {
     title: string,
     description: string,
     time: string,
+    imageUrl: String,
+    hasImage: boolean,
     sequence: number,
     isActive: boolean
 } 
@@ -12,6 +14,8 @@ export interface Achievement {
     title: string,
     description: string,
     time: string,
+    hasImage: boolean,
+    imageUrl: String,
     sequence: number,
     isActive: string
 } 
@@ -21,6 +25,8 @@ export function AchievementToLocal(achievement: AchievementNetwork): Achievement
     return {
         _id:achievement._id,
         title: achievement.title,
+        imageUrl: achievement.imageUrl,
+        hasImage: achievement.hasImage,
         description: achievement.description,
         time: achievement.time, 
         sequence: achievement.sequence,
@@ -32,8 +38,10 @@ export function AchievementToNetwork(achievement: Achievement): AchievementNetwo
     return {
         _id:achievement._id,
         title: achievement.title,
+        imageUrl: achievement.imageUrl,
         description: achievement.description,
         time: achievement.time, 
+        hasImage: achievement.hasImage,
         sequence: achievement.sequence,
         isActive: achievement.isActive == 'true'
     }

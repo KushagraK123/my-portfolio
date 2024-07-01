@@ -5,6 +5,7 @@ export interface CourseNetwork {
     time: string, 
     imagePath: string, 
     sequence: number,
+    certificate: String,
     isActive: boolean
 } 
 
@@ -12,7 +13,8 @@ export interface Course {
     _id: string, 
     title: string,
     description: string,
-    time: string, 
+    time: string,
+    certificate: String, 
     image: string, 
     sequence: number,
     isActive: string
@@ -26,6 +28,7 @@ export function CourseToLocal(course: CourseNetwork): Course {
         description: course.description,
         time: course.time, 
         image: course.imagePath,
+        certificate: course.certificate,
         sequence: course.sequence,
         isActive: getIsActiveStringValue(course.isActive)
     }
@@ -35,6 +38,7 @@ export function CourseToNetwork(course: Course): CourseNetwork {
     return {
         _id:course._id,
         title: course.title,
+        certificate: course.certificate,
         description: course.description,
         time: course.time, 
         imagePath: course.image,

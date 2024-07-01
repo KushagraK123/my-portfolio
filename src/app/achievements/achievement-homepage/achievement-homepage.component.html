@@ -13,6 +13,7 @@
       </div>
       
       <p class="body-text" style="margin-top: 24px; margin-left: 8px;">{{achievement.description}}</p>
+      <p style="text-align: left;" *ngIf="achievement.hasImage">  <a class="link-text" href="{{achievement.imageUrl}}" target="blank">View</a> </p>
   
     </div>
   </ng-container>

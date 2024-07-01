@@ -31,5 +31,4 @@ export class ExperienceHomepageComponent implements OnInit {
     ans = description.split('.');
     return ans;
   }
-
 }

@@ -27,6 +27,7 @@
       <p style="margin-top: 32px;" class="header-text">Screenshots</p>
 
       <img class="img-responsive" src="{{project.mainImage}}"  />
+      <br/>
       <img *ngIf="checkSSAvailable(project.ss1)" class="img-responsive" src="{{project.ss1}}"/>
       <img *ngIf="checkSSAvailable(project.ss2)" class="img-responsive" src="{{project.ss2}}"/>
       <img *ngIf="checkSSAvailable(project.ss3)" class="img-responsive" src="{{project.ss3}}"/>

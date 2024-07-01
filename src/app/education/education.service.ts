@@ -8,13 +8,22 @@ export class EducationService {
 
     educations: Education[] = [
         {
-            _id: "string", 
-            institute: "IIT, Chicago",
-            description: "desc1",
-            course: "1123",
-            time: "string-string", 
-            grade: "3.75/4",
+            _id: "1", 
+            institute: "Illinois Institute of Technology, Chicago",
+            description: "",
+            course: "Computer Science (M.A.S.)",
+            time: "Aug 2024 - May 2026", 
+            grade: "-",
             sequence: 1,
+            isActive: "true"
+        }, {
+            _id: "2", 
+            institute: "Shri Guru Gobind Singhji Institute of Engineering and Technology, Nanded, India",
+            description: "",
+            course: "Bachelor of Technology, Information Technology",
+            time: "AUG 2016 - OCT 2020", 
+            grade: "7.86/10 CGPA",
+            sequence: 2,
             isActive: "true"
         }
     ];

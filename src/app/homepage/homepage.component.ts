@@ -13,7 +13,6 @@ import { AnalyticsService } from '../analytics/analytics.service';
 export class HomepageComponent implements OnInit {
 
   constructor(private analyticsService: AnalyticsService) {
-    let analytics = {info: "This is test info2", time: "This is test time1"};
   }
 
   ngOnInit(): void {
