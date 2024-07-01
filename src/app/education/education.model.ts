@@ -3,6 +3,7 @@ export interface EducationNetwork {
     institute: string,
     description: string,
     course: string,
+    icon: String,
     time: string, 
     grade: string
     sequence: number,
@@ -12,6 +13,7 @@ export interface EducationNetwork {
 export interface Education {
     _id: string, 
     institute: string,
+    icon: String,
     description: string,
     course: string,
     time: string, 
@@ -27,6 +29,7 @@ export function EducationToLocal(education: EducationNetwork): Education {
         institute: education.institute,
         description: education.description,
         course: education.course,
+        icon: education.icon,
         time: education.time, 
         grade: education.grade,
         sequence: education.sequence,
@@ -41,6 +44,7 @@ export function EducationToNetwork(education: Education): EducationNetwork {
         description: education.description,
         course: education.course,
         time: education.time, 
+        icon: education.icon,
         grade: education.grade,
         sequence: education.sequence,
         isActive: education.isActive == 'true'

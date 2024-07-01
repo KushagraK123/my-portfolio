@@ -13,8 +13,13 @@ export class HeaderComponent implements OnInit {
   }
 
   smoothScroll = function(id: string) {
-    var scrollContainer = document.getElementById(id)!!;
-    scrollContainer.scrollIntoView({behavior:"smooth"});
+    var element = document.getElementById(id)!!;
+    if (element) {
+      window.scrollTo({
+        top: element.offsetTop,
+        behavior: 'smooth'
+      });
+    }
   }
 
 }
