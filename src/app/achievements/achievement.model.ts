@@ -6,6 +6,7 @@ export interface AchievementNetwork {
     imageUrl: String,
     hasImage: boolean,
     sequence: number,
+    icon: String,
     isActive: boolean
 } 
 
@@ -14,6 +15,7 @@ export interface Achievement {
     title: string,
     description: string,
     time: string,
+    icon: String,
     hasImage: boolean,
     imageUrl: String,
     sequence: number,
@@ -28,6 +30,7 @@ export function AchievementToLocal(achievement: AchievementNetwork): Achievement
         imageUrl: achievement.imageUrl,
         hasImage: achievement.hasImage,
         description: achievement.description,
+        icon: achievement.icon,
         time: achievement.time, 
         sequence: achievement.sequence,
         isActive: getIsActiveStringValue(achievement.isActive)
@@ -41,6 +44,7 @@ export function AchievementToNetwork(achievement: Achievement): AchievementNetwo
         imageUrl: achievement.imageUrl,
         description: achievement.description,
         time: achievement.time, 
+        icon: achievement.icon,
         hasImage: achievement.hasImage,
         sequence: achievement.sequence,
         isActive: achievement.isActive == 'true'

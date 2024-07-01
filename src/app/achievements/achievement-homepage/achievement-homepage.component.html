@@ -6,15 +6,23 @@
     </ng-container>
     
   <ng-container *ngFor="let achievement of achievements">
-    <div class="education-block" *ngIf="getBooleanFromString(achievement.isActive)">
-      <div style="display: flex; justify-content: space-between;">
-        <p class="header-text" style="margin-top: 16px; margin-left: 8px;">{{achievement.title}}</p>
-        <p class="sub-header-text" style="margin-top: 16px; margin-right: 32px;">{{achievement.time}}</p>
+
+    <div class="project shadow-large" *ngIf="getBooleanFromString(achievement.isActive)">
+
+      <div routerLink="project-detail" routerLinkActive="active" class="project-image">
+        <img style="width: 200px; height: 200px;" src="{{achievement.icon}}" />
       </div>
-      
-      <p class="body-text" style="margin-top: 24px; margin-left: 8px;">{{achievement.description}}</p>
-      <p style="text-align: left;" *ngIf="achievement.hasImage">  <a class="link-text" href="{{achievement.imageUrl}}" target="blank">View</a> </p>
-  
+
+        <div class="project-info">
+          <p class="header-text">{{achievement.title}}</p>
+
+          <p class="body-text" style="max-width: 400px; margin-top: 16px; margin-bottom: 32px;">
+              {{achievement.description}}
+          </p>
+          <p class="sub-header-text" style="margin-top: 16px; margin-right: 32px;">{{achievement.time}}</p>
+     
+        <p style="text-align: left;" *ngIf="achievement.hasImage">  <a class="link-text" href="{{achievement.imageUrl}}" target="blank">View</a> </p>
+      </div>  
     </div>
   </ng-container>
   </div>

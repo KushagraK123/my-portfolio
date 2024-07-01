@@ -12,6 +12,7 @@ export class AchievementService {
         description: "Appreciation Certificate for successful development and release of Contingency System for processing pension payments",
         time: "21 Oct 2022", 
         sequence: 1,
+        icon: "assets/acheivements/tcs.png",
         hasImage: true,
         imageUrl: "assets/acheivements/Appreciation_Certificate.pdf",
         isActive: "true"
@@ -22,6 +23,7 @@ export class AchievementService {
         time: "20 Apr 2022", 
         sequence: 2,
         imageUrl: "assets/acheivements/20apr2022.pdf",
+        icon: "assets/acheivements/tcs.png",
         hasImage: true,
         isActive: "true"
     },{
@@ -30,6 +32,7 @@ export class AchievementService {
         description: "Secured 2nd prize in ‘Code is less’ programming competition held by Pragyaa (A national level Technical Fiesta).",
         time: "20 February 2019", 
         sequence: 3,
+        icon: "assets/univ/sggs.png",
         hasImage: true,
         imageUrl: "",
         isActive: "false"
@@ -40,6 +43,7 @@ export class AchievementService {
         description: "Secured 2nd prize in ‘Code is less’ programming competition held by Pragyaa (A national level Technical Fiesta).",
         time: "27 February 2019", 
         sequence: 4,
+        icon: "assets/univ/sggs.png",
         imageUrl: "",
         hasImage: false,
         isActive: "true"
@@ -49,6 +53,7 @@ export class AchievementService {
         description: "Secured 3rd prize in ‘C Brain’ programming competition held by Pragyaa (A national level Technical Fiesta).",
         time: "17 March 2018", 
         sequence: 5,
+        icon: "assets/univ/sggs.png",
         imageUrl: "",
         hasImage: false,
         isActive: "true"
