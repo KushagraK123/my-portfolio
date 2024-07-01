@@ -160,7 +160,7 @@ header a {
 }
 
 header a:hover {
-  color: #217dbb;
+  color: #1c55be;
   text-decoration: none;
   background: #eee;
   border-radius: 4px;
@@ -418,7 +418,7 @@ footer {
   width: 3px;
   height: 40px;
   background: #2d6ce0;
-  background: linear-gradient(to bottom, #2d6ce0, rgba(52, 152, 219, 0));
+  background: linear-gradient(to bottom, #2d6ce0, rgba(45, 108, 224, 0));
   top: 100%;
   left: 213px;
 }
