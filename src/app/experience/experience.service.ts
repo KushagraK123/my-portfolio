@@ -9,9 +9,9 @@ export class ExperienceService {
     experiences: Experience[] = [{
         _id: "2", 
         title: "Senior Software Engineer",
-        description: "1.2.3.4.5.6",
+        description: "Developed Thumbnail Service in Java Spring to generate thumbnails for patient documents.Integrated Azure Service Bus with Patient Service for real-time Activity Events logging, improving patient-practitioner interaction tracking.Implemented code for processing XOrder files containing lab order data.Ensured code quality through reviews, testing, and adherence to best practices.Technologies used: Java Spring, Azure Service Bus, docker",
         time: "Sep 2023 - Aug 2024",
-        company: "Straumann",
+        company: "Straumann, Bengaluru, India",
         companyWebsite: "https://www.straumann.com/",
         sequence: 2,
         isActive: "true"
@@ -20,7 +20,7 @@ export class ExperienceService {
         title: "Software Engineer-II",
         description: "Developed and maintained an observability tool, enhancing system visibility and performance monitoring.Designed and implemented the analytics component of the observability tool, enabling data-driven insights.Created an Ingestion Service to efficiently collect and process large volumes of data for real-time analysis.Developed a Query Service to enable users to interactively query and retrieve insights from the data.Utilized cutting-edge technologies including Spring Boot, WebFlux, Clickhouse database, Kafka Queue, and GraphQL",
         time: "Jan 2023 - Sep 2023",
-        company: "Rakuten",
+        company: "Rakuten, Bengaluru, India",
         companyWebsite: "https://global.rakuten.com/corp/",
         sequence: 3,
         isActive: "true"

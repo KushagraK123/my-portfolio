@@ -9,7 +9,7 @@ export class EducationService {
     educations: Education[] = [
         {
             _id: "1", 
-            institute: "Illinois Institute of Technology, Chicago",
+            institute: "College of Computing, Illinois Institute of Technology, Chicago",
             description: "",
             icon: "assets/univ/illinois_tech.png",
             course: "Computer Science (M.A.S.)",
@@ -23,7 +23,7 @@ export class EducationService {
             description: "",
             icon: "assets/univ/sggs.png",
             course: "Bachelor of Technology, Information Technology",
-            time: "AUG 2016 - OCT 2020", 
+            time: "Aug 2016 - Oct 2020", 
             grade: "7.86/10 CGPA",
             sequence: 2,
             isActive: "true"
