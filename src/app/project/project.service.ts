@@ -11,7 +11,7 @@ export class ProjectService {
         title: "Open Source contribution in LibreOffice",
         description: "LibreOffice is a free open-source office productivity software suite, I made a contribution to it by fixing a bug in it.",
         mainImage: "assets/projects/libreoffice/title.png",
-        projectLink: "https://kushagrak123.github.io/Pathfinding-Visualizer/",
+        projectLink: "https://gerrit.libreoffice.org/c/core/+/69394/",
         hasLink: "true",  
         ss1: "",
         ss2: "",

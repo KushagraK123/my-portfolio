@@ -20,7 +20,7 @@ export class BioService {
         github: "github.com",
         resume: "assets/KushagraResume.pdf",
         aboutme: "Experienced software engineer with 4.5 years in Java backend development, MicroServices, Angular & Android Development with Strong in data structures, algorithms, and scalable application design.", 
-        hackerrank: "hackerrank.com",
+        hackerrank: "https://www.hackerrank.com/profile/kushagrakasliwa1",
         email: "kushagrakasliwal47@gmail.com"
     };
       
